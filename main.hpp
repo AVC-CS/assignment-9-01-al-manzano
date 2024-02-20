@@ -17,14 +17,22 @@ void printStudent(Student *head);
 
 void makeStudent(Student *student)
 {
-    /*******************************
-     * Code your program here
-     *******************************/
+    ifstream ifs;
+    ifs.open("students.txt"); 
+    if (!ifs) {
+        cerr << "File error!\n";
+        exit(0);
+    }
+
+    //-> is basically the this keyword in java
+    for (int i = 0; i < N; i++) {
+        ifs >> (student + i) -> id >> (student + i) -> name >> (student + i) -> major;
+    }
 }
 void printStudent(Student *student)
 {
     cout << endl;
-    /*******************************
-     * Code your program here
-     *******************************/
+    for (int i = 0; i < N; i++) {
+        cout << (student + i) -> id << " " << (student + i) -> name <<  " " << (student + i) -> major << endl;
+    }
 }
